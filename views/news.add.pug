@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  .header
+    h1 Add News
+  form(action='/item/add', method='post')
+    .form-group
+      label(for='newsTitle') Title
+      input.form-control(type='text', name='newsTitle', id='newsTitle', placeholder='Title', tabindex='1', autofocus)
+    .form-group
+      label(for='newsContent') Content
+      textarea#summernote.form-control(name='newsContent', tabindex='2')
+    input.btn.btn-default.btn-space(type='submit', value='Save')
+    a(href='/') Cancel

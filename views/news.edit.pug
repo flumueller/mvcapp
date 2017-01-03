@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  .header
+    h1 Edit News
+  form(action='/item/edit/' + item._id, method='POST')
+    .form-group
+      label(for='newsTitle') Title
+      input.form-control(type='text', name='newsTitle', id='newsTitle', placeholder='Title', value= item.title)
+    .form-group
+      label(for='newsContent') Content
+      textarea#summernote.form-control(name='newsContent')= item.content
+    input.btn.btn-default.btn-space(type='submit', value='Save')
+    a.btn.btn-default.btn-space(href='/item/delete/' + item._id) Delete
+    a(href='/') Cancel  

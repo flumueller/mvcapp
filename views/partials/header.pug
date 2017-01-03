@@ -1,0 +1,17 @@
+header#top
+  .container.clearfix
+    ul.nav.nav-pills.pull-left
+      li.active
+        a(href='')
+          i.glyphicon.glyphicon-dashboard
+          br
+          | Dashboard
+      li
+        a(href='')
+          i.glyphicon.glyphicon-map-marker
+          br
+          | Roadmap
+    form#user.pull-right(action='/logout', method='POST')
+      | #{user.fullName} | 
+      form(action='/logout', method='POST')
+        button.btn.btn-logout(type="submit"): i.glyphicon.glyphicon-log-out

@@ -1,0 +1,184 @@
+@import url('/fonts/css/mvcapp.css');
+
+$grayLight: #bbb;
+$grayRegular: #999;
+$grayDark: #333;
+
+$border: #ddd;
+
+$blueDark: #2f4050;
+  
+body {
+  background: #fff;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h1 {
+  color: $grayDark;
+  font-size: 24px;
+  margin: 0;
+}
+
+
+/* --- Login ----------------------- */
+
+#page-visitor {
+  background-color: $blueDark;
+  margin-top: 50px;
+  
+  h1 {
+    margin-bottom: 20px;
+  }
+}
+
+#login {
+  background-color: #fff;
+  margin: 0 auto;
+  width: 450px;
+  padding: 50px;
+  text-align: center;
+  
+  .form-group {
+    margin-left: 0;
+    margin-right: 0;
+    
+    label {
+      float: left;
+      width: 30px;
+      
+      i {
+        color: $grayRegular;
+        
+        &:before {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+  
+  .alert {
+    border-radius: 0;
+    border: 0;
+  }
+  
+  input[type=text], input[type=password] {
+    border: 0;
+    border-bottom: 1px solid $border;
+    border-radius: 0;
+    box-shadow: none;
+    float: left;
+    padding: 0;
+    width: 320px;
+  }
+  
+  button[type=submit] {
+    box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+    margin-top: 10px;
+    outline: none;
+    padding: 8px 35px;
+  }
+  
+  .noaccount {
+    color: $grayLight;
+    font-size: .7em;
+    text-transform: uppercase;
+  }
+  
+  .password-forgot {
+    clear: left;
+    color: $grayLight;
+    display: block;
+    font-size: .7em;
+    padding-top: 5px;
+    text-transform: uppercase;
+  }
+}
+
+.teaser {
+  color: $grayRegular;
+  margin-bottom: 40px;
+}
+
+/* --- General --------------------- */
+
+#top {
+  background-color: $blueDark;
+}
+
+#user {
+  color: #fff;
+  margin-top: 20px;
+  
+  a {
+    color: #fff;
+  }
+  
+  .btn-logout {
+    background-color: transparent;
+    display: inline;
+    padding: 0;
+    
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+.header {
+  margin: 30px 0 40px 0;
+}
+
+
+.nav.nav-pills {
+  li a {
+    background: none;
+    border-radius: 0;
+    color: #fff;
+    text-align: center;
+  }
+  
+  li.active a {
+    background-color: #337ab7;
+  }
+}
+
+.btn-space {
+  margin-right: 10px;
+}
+
+.btn {
+  border-radius: 30px;
+}
+
+.btn-main {
+  background-color: #337ab7;
+  border: 1px solid rgba(#000, .1);
+  box-shadow: 0 0 2px rgba(#000, 0.2);
+  color: #fff;
+  padding: 8px 20px;
+  
+  &:hover {
+    color: #fff;
+  }
+}
+
+.date {
+  color: #999;
+  font-size: 12px;
+  
+  .glyphicon {
+    padding-right:  5px;
+  }
+}
+
+.newslist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  
+  li {
+    border: 1px solid #eee;
+    margin-bottom: 10px;
+    padding: 20px;
+  }
+}

@@ -1,0 +1,19 @@
+doctype html
+
+html(lang='en')
+  head
+    title Roadmap
+    link(href='/bower_components/bootstrap/dist/css/bootstrap.min.css', rel='stylesheet')
+    script(src='/bower_components/jquery/dist/jquery.min.js')
+    script(src='/bower_components/bootstrap/dist/js/bootstrap.min.js')
+    // Include Summernote css/js
+    link(href='/bower_components/summernote/dist/summernote.css', rel='stylesheet')
+    script(src='/bower_components/summernote/dist/summernote.min.js')
+    // Custom css/js
+    link(href='/css/style.css', rel='stylesheet', type='text/css')
+    script(src='/js/scripts.js')
+  body
+    include partials/header
+    
+    .container
+      block content

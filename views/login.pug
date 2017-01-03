@@ -1,0 +1,38 @@
+extends layout.auth.pug
+
+block content
+  - var config = app.get('stormpathConfig');
+
+  #login
+    h1 Sign in
+    p.teaser Welcome back to mvcapp. Use your login credentials on order to sign in.
+
+    if error
+      .alert.alert-danger.bad-login
+        p= error
+
+    // Needed?
+    if formErrors
+      .alert.alert-danger.bad-login
+        each error in formErrors
+          p= error.error
+
+    form.form-horizontal(method='post', role='form')
+      input(name='_csrf', type='hidden', value=csrfToken)
+
+      .form-group.clearfix
+        label: i.icon-password
+        - var value = form.data ? form.data.login : '';
+        input.form-control(autofocus='true', placeholder=config.web.login.form.fields.login.placeholder, required=true, name='login', type='text', value=value)
+
+      .form-group.clearfix
+        label: i.icon-user
+        input.form-control(placeholder=config.web.login.form.fields.password.placeholder, required=true, type='password', name='password')
+        if config.web.forgotPassword.enabled
+            a.password-forgot(href=config.web.forgotPassword.uri) Forgot password?
+
+      .form-group
+          button.btn.btn-primary.btn-login(type='submit') Login
+
+    if config.web.register.enabled
+      .noaccount Not yet registered? <strong><a href="#{config.web.register.uri}">Create account</a></strong>

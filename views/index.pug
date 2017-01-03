@@ -1,0 +1,31 @@
+extends layout
+
+block content
+  .header.clearfix
+    .pull-left
+      h1 Recent News
+      .dropdown
+        a.dropdown-toggle(href='#', data-toggle='dropdown')
+          | Sorted by creation date
+          span.caret
+        ul.dropdown-menu
+          li: a(href='/?sort=created_at') creation date
+          li: a(href='/?sort=updated_at') modification eate
+          
+    a.btn.btn-main.pull-right(href='/item/add')
+      | Add 
+      i.glyphicon.glyphicon-plus-sign
+  
+  if newslist.length
+    ul.newslist
+      each news, i in newslist
+        li
+          a(href='/item/' + news._id)= news.title
+          .date
+            i.glyphicon.glyphicon-time 
+            = moment(news.created_at).format('DD. MMMM YYYY - HH:mm')
+          .date
+            i.glyphicon.glyphicon-time 
+            = moment(news.updated_at).format('DD. MMMM YYYY - HH:mm')
+  else
+    div No news 
